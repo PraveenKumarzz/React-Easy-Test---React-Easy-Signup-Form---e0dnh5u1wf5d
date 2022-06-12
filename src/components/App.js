@@ -72,15 +72,11 @@ export default function Form() {
 
   const handleCheck = (e) => {
     setPassword(e.target.value);
-    setSubmitted(false);
+    setChecked(true);
   };
 
   return (
     <div className="form">
-      <div>
-        <h1>User Registration</h1>
-      </div>
-
       {/* Calling to the methods */}
       <div className="messages">
         {errorMessage()}
@@ -89,38 +85,36 @@ export default function Form() {
 
       <form>
         {/* Labels and inputs for form data */}
-        <label className="label" id="name">
-          Name
-        </label>
+        <label className="label">Name</label>
         <input
           onChange={handleName}
           className="input"
+          id="name"
           value={name}
           type="text"
         />
 
-        <label className="label" id="email">
-          Email
-        </label>
+        <label className="label">Email</label>
         <input
+          id="email"
           onChange={handleEmail}
           className="input"
           value={email}
           type="email"
         />
 
-        <label className="label" id="password">
-          Password
-        </label>
+        <label className="label">Password</label>
         <input
+          id="password"
           onChange={handlePassword}
           className="input"
           value={password}
           type="password"
         />
-        <label className="label" id="consent">
+        <label className="label">
           <input
             type="checkbox"
+            id="consent"
             defaultChecked={checked}
             onChange={handleCheck}
           />
