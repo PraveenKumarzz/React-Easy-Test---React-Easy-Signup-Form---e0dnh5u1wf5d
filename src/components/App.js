@@ -68,6 +68,8 @@ export default function Form() {
     );
   };
 
+  // Handling the check
+
   const handleCheck = (e) => {
     setPassword(e.target.value);
     setSubmitted(false);
@@ -120,7 +122,7 @@ export default function Form() {
           <input
             type="checkbox"
             defaultChecked={checked}
-            onChange={() => setChecked(!checked)}
+            onChange={handleCheck}
           />
         </label>
 
